@@ -6,7 +6,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Svatba v Gauči</title>
+	<title>Svatba v Salabce</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Svatebni web." />
 	<meta name="keywords" content="svatba" />
@@ -60,7 +60,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-2">
-					<div id="fh5co-logo"><a href="index.html">A &amp; J<strong>.</strong></a></div>
+					<div id="fh5co-logo"><a href="index.html">A &amp; J</a></div>
 				</div>
 				<div class="col-xs-10 text-right menu-1">
 					<ul>
@@ -75,7 +75,7 @@
 		</div>
 	</nav>
 
-	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/gauc.jpg);" data-stellar-background-ratio="0.5">
+	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/salabka1.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -125,7 +125,7 @@
 		</div>
 	</div>
 
-	<div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/strom.jpg);">
+	<div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/salabka2.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -286,7 +286,7 @@
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-						<small class="block">&copy; 2020 Jarda &amp; Káťa. | #svatbavgauci </small> 
+						<small class="block">&copy; 2023 Adriana &amp; Josef. | #svatbavsalabce </small> 
 					</p>
 				</div>
 			</div>
@@ -319,12 +319,12 @@
 	<script src="https://api.mapy.cz/loader.js"></script>
 	<script>Loader.load()</script>
 	<script type="text/javascript">
-		var stred = SMap.Coords.fromWGS84(14.425, 50.106);
-		var gauc = SMap.Coords.fromWGS84(14.429, 50.1053);
+		var stred = SMap.Coords.fromWGS84(14.41, 50.12);
+		var salabka = SMap.Coords.fromWGS84(14.4105, 50.1207);
 		var obrad = SMap.Coords.fromWGS84(14.422, 50.1072);
 
 		var souradnice = [];
-		souradnice.push(gauc);
+		souradnice.push(salabka);
 		souradnice.push(obrad);
 		
 		var znacka_g = JAK.mel("div");
@@ -337,7 +337,7 @@
 		znacka_o.appendChild(obrazek_o);
 
 		var popisek_g = JAK.mel("div", {}, {position:"absolute", left:"0px", top:"2px", textAlign:"center", width:"22px", color:"white", fontWeight:"bold"});
-		popisek_g.innerHTML = "G";
+		popisek_g.innerHTML = "S";
 		znacka_g.appendChild(popisek_g);
 
 		var popisek_o = JAK.mel("div", {}, {position:"absolute", left:"0px", top:"2px", textAlign:"center", width:"22px", color:"white", fontWeight:"bold"});
@@ -358,7 +358,7 @@
 		mapa.addLayer(layer);
 		layer.enable();
 
-		var marker_g = new SMap.Marker(gauc, "Gauc", {url:znacka_g, anchor: {left:10, bottom: 1}});
+		var marker_g = new SMap.Marker(gauc, "Salabka", {url:znacka_g, anchor: {left:10, bottom: 1}});
 		layer.addMarker(marker_g);
 
 		var marker_o = new SMap.Marker(obrad, "Obrad", {url:znacka_o, anchor: {left:10, bottom: 1}});
@@ -383,11 +383,11 @@
 
     // default example
     simplyCountdown('.simply-countdown-one', {
-        year: 2020,
-        month: 7,
-        day: 18,
-        hours: 17,
-        minutes: 30
+        year: 2023,
+        month: 6,
+        day: 10,
+        hours: 16,
+        minutes: 00
     });
 
     //jQuery example
