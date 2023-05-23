@@ -105,7 +105,7 @@
 		</div>
 	</div>
 
-	<div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/salabka2.jpg);">
+	<div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/salabka1.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -241,7 +241,7 @@
 						<div class="feature-copy">
 							<h3>Doprava a parkování</h3>
 							<p>Na Salabku se pohodlně dostanete MHD či taxi.</p>
-							<p>V den svatby budeme mít pronajaté přilehlé parkoviště s omezenou kapacitou. Pokud víte, že na svatbu dorazíte autem, dejte nám prosím dopředu vědět. Pokusíme se pro vás zajistit místo. Dále jde parkovat podél ulice Jiřího Jandy.</p>
+							<p>V den svatby budeme mít pronajaté <a href="https://www.google.com/maps/place/Salabka+parkoviště/@50.1203483,14.40986,18z/data=!4m14!1m7!3m6!1s0x470bead136f70651:0x3592d5842054b27e!2sSalabka!8m2!3d50.1208659!4d14.4098868!16s%2Fg%2F1q6728pxg!3m5!1s0x470beb37be470bd1:0x7aff261cea23fa63!8m2!3d50.1201642!4d14.410677!16s%2Fg%2F11j8hgy4cj">přilehlé parkoviště</a> s omezenou kapacitou. Pokud víte, že na svatbu dorazíte autem, dejte nám prosím dopředu vědět. Pokusíme se pro vás zajistit místo. Dále jde parkovat podél ulice <a href="https://www.google.com/maps/place/Siterra+Sro+Branch/@50.1207835,14.4106706,19z/data=!4m6!3m5!1s0x470bead12def488f:0xb5a892dc7b6c84f0!8m2!3d50.121003!4d14.410781!16s%2Fg%2F11ggy_6pv6">Jiřího Jandy</a>.</p>
 						</div>
 					</div>
 
@@ -283,7 +283,7 @@
 						</span>
 						<div class="feature-copy">
 							<h3>Další informace</h3>
-							<p>NNevěstu prosím neunášejte, těší se na Gin & Tonic, jídlo a protančený střevíce.</p>
+							<p>Nevěstu prosím neunášejte, těší se na Gin & Tonic, jídlo a protančený střevíce.</p>
 							<p>Kdyby vám chyběly nějaké informace, obraťte se prosím na nás. Kontakt na nás všichni máte. V den svatby budou na místě tři krásné slečny, které budou vše organizovat, můžete se jich pak v průběhu dne na cokoliv zeptat.</p>
 						</div>
 					</div>
@@ -338,16 +338,19 @@
 	<script src="https://api.mapy.cz/loader.js"></script>
 	<script>Loader.load()</script>
 	<script type="text/javascript">
-		var stred = SMap.Coords.fromWGS84(14.41, 50.12);
-		var salabka = SMap.Coords.fromWGS84(14.4105, 50.1207);
-		var obrad = SMap.Coords.fromWGS84(14.422, 50.1072);
+		var stred = SMap.Coords.fromWGS84(14.425, 50.106);
+		var gauc = SMap.Coords.fromWGS84(14.4104, 50.1205);
+		var obrad = SMap.Coords.fromWGS84(14.4107, 50.1201);
+		var park = SMap.Coords.fromWGS84(14.4111, 50.1209);
 
 		var souradnice = [];
-		souradnice.push(salabka);
+		souradnice.push(gauc);
 		souradnice.push(obrad);
+		souradnice.push(park);
 		
 		var znacka_g = JAK.mel("div");
 		var znacka_o = JAK.mel("div");
+		var znacka_p = JAK.mel("div");
 
 		var obrazek_g = JAK.mel("img", {src:SMap.CONFIG.img+"/marker/drop-red.png"});
 		znacka_g.appendChild(obrazek_g);
@@ -355,13 +358,20 @@
 		var obrazek_o = JAK.mel("img", {src:SMap.CONFIG.img+"/marker/drop-blue.png"});
 		znacka_o.appendChild(obrazek_o);
 
+		var obrazek_p = JAK.mel("img", {src:SMap.CONFIG.img+"/marker/drop-blue.png"});
+		znacka_p.appendChild(obrazek_p);
+
 		var popisek_g = JAK.mel("div", {}, {position:"absolute", left:"0px", top:"2px", textAlign:"center", width:"22px", color:"white", fontWeight:"bold"});
 		popisek_g.innerHTML = "S";
 		znacka_g.appendChild(popisek_g);
 
 		var popisek_o = JAK.mel("div", {}, {position:"absolute", left:"0px", top:"2px", textAlign:"center", width:"22px", color:"white", fontWeight:"bold"});
-		popisek_o.innerHTML = "O";
+		popisek_o.innerHTML = "P";
 		znacka_o.appendChild(popisek_o);
+
+		var popisek_p = JAK.mel("div", {}, {position:"absolute", left:"0px", top:"2px", textAlign:"center", width:"22px", color:"white", fontWeight:"bold"});
+		popisek_p.innerHTML = "P";
+		znacka_p.appendChild(popisek_p);
 
 		var mapa = new SMap(JAK.gel("mapa"), stred, 16);
 		mapa.addDefaultLayer(SMap.DEF_BASE).enable();
@@ -380,8 +390,11 @@
 		var marker_g = new SMap.Marker(gauc, "Salabka", {url:znacka_g, anchor: {left:10, bottom: 1}});
 		layer.addMarker(marker_g);
 
-		var marker_o = new SMap.Marker(obrad, "Obrad", {url:znacka_o, anchor: {left:10, bottom: 1}});
+		var marker_o = new SMap.Marker(obrad, "Parking Salabka", {url:znacka_o, anchor: {left:10, bottom: 1}});
 		layer.addMarker(marker_o);
+
+		var marker_p = new SMap.Marker(park, "Parking Janda", {url:znacka_p, anchor: {left:10, bottom: 1}});
+		layer.addMarker(marker_p);
 
 		var cz = mapa.computeCenterZoom(souradnice); /* Spočítat pozici mapy tak, aby značky byly vidět */
 		mapa.setCenterZoom(cz[0], cz[1]); 
