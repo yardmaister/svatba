@@ -446,6 +446,12 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-bottom: 30px;
 }
 
+.event-col2 {
+  width: 50%;
+  float: left;
+  margin-bottom: 5px;
+}
+
 #fh5co-counter {
   height: 600px;
 }
@@ -879,7 +885,7 @@ form label {
 .fh5co-cover .display-tc .btn {
   padding: 15px 20px;
   background: #fff !important;
-  color: #F14E95;
+  color: #000;
   border: none !important;
   font-size: 14px;
   text-transform: uppercase;
@@ -942,7 +948,7 @@ form label {
   display: inline-block;
   width: 100px;
   height: 100px;
-  background: rgba(241, 78, 149, 0.8);
+  background: rgba(0, 0, 0, 0.8);
   margin: 0 4px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -1159,7 +1165,7 @@ form label {
   height: 90px;
   font-size: 40px;
   line-height: 40px;
-  color: #F14E95;
+  color: #000;
 }
 .feature-center p, .feature-center h3 {
   margin-bottom: 30px;
@@ -1181,7 +1187,7 @@ form label {
   margin-bottom: 10px;
   line-height: 1.5;
   font-weight: bold;
-  color: #F14E95;
+  color: #000;
   font-family: Verdana, Geneva, sans-serif;
 }
 @media screen and (max-width: 768px) {
@@ -1308,7 +1314,7 @@ form label {
   display: table-cell;
   vertical-align: middle;
   font-size: 30px;
-  color: #F14E95;
+  color: #000;
 }
 .feature-left .feature-copy {
   float: left;
